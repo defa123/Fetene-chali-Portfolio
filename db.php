@@ -1,6 +1,6 @@
 <?php
 // Database connection
-$host = "https://defa123.github.io/";
+$host = "localhost";
 $user = "root";
 $pass = ""; // your MySQL password
 $db   = "portfolio";
@@ -11,4 +11,3 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 ?>
-

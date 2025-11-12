@@ -1,6 +1,6 @@
 <?php
 // database.php
-$host = 'https://defa123.github.io/';
+$host = 'localhost';
 $db   = 'portfolio';       // your database name
 $user = 'root';            // your DB username
 $pass = '';                // your DB password
@@ -18,4 +18,3 @@ try {
     die("Database connection failed: " . $e->getMessage());
 }
 ?>
-
