@@ -1,0 +1,475 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 60px;
+    color: #2e7d32;
+}
+
+section {
+    padding: 60px 20px;
+}
+
+/* Navbar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: #2e7d32;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav h1 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+nav ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    margin: 0;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    background: #1b5e20;
+    border-radius: 5px;
+}
+
+.menu-btn, .darkBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+
+@media(max-width:768px) {
+    .menu-btn { display: block; }
+    nav ul { display: none; flex-direction: column; background: #2e7d32; position: absolute; top: 60px; left: 0; width: 100%; padding: 10px 0; }
+    nav ul.open { display: flex; }
+    nav ul li { text-align: center; }
+}
+
+/* About */
+#about img.profile-img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Skills */
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.skill {
+    flex: 1 1 200px;
+}
+
+.skill-bar {
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    height: 10px;
+    margin-top: 5px;
+}
+
+.skill-level {
+    background: #2e7d32;
+    height: 10px;
+    width: 0;
+    transition: width 1s ease-in-out;
+}
+
+/* Gallery */
+.gallery {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    margin-top: 20px;
+}
+
+.gallery-track {
+    display: flex;
+    transition: 0.5s;
+}
+
+.gallery-item {
+    min-width: 100%;
+}
+
+.gallery-item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.gallery-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.gallery-btn:hover {
+    background: rgba(0,0,0,0.8);
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Experience, Projects, Certificates */
+.exp-card, .project, .cert-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    flex: 1 1 300px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.exp-card:hover, .project:hover, .cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.project img, .cert-card img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+/* Flex containers */
+.projects, .certificates-container, .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Testimonials */
+.testimonial-container {
+    position: relative;
+    overflow: hidden;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.testimonial {
+    display: none;
+}
+
+.testimonial.active {
+    display: block;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+#contact {
+    padding: 50px 20px;
+    background: #f7f7f7; /* optional light background */
+}
+
+#contact h2 {
+    text-align: center;
+    color: #2e7d32;
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+#contact div {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#contact p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+#contact a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2e7d32;
+    color: #fff;
+}
+
+/* Dark Mode */
+.dark {
+    background: #111;
+    color: #fff;
+}
+
+.dark .exp-card, .dark .project, .dark .cert-card {
+    background: #222;
+    color: #fff;
+}
+
+.dark nav {
+    background: #000;
+}
+
+.dark nav ul li a:hover {
+    background: #444;
+}
+/* Tooltip styling */
+.social-floating a {
+    position: relative; /* Needed for tooltip positioning */
+}
+
+/* Tooltip text */
+.social-floating a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: 55px; /* distance from icon */
+    top: 50%;
+    transform: translateY(-50%);
+    background: #2e7d32;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, left 0.3s;
+    font-size: 0.9rem;
+    z-index: 1000;
+}
+
+/* Show tooltip on hover (desktop) */
+.social-floating a:hover::after {
+    opacity: 1;
+    left: 60px;
+}
+
+/* Mobile - remove tooltips */
+@media(max-width:768px){
+    .social-floating a::after {
+        display: none;
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* Navigation container */
+nav {
+    display: flex;
+    justify-content: flex-start; /* left align internal menu */
+    align-items: center;
+    gap: 20px;
+    padding: 10px 20px;
+    background-color: #fff; /* header background */
+}
+
+/* Internal menu */
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+.menu li a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #000; /* internal link color */
+    transition: color 0.3s;
+}
+.menu li a:hover {
+    color: #007BFF; /* hover color for internal links */
+}
+
+/* Divider between internal & external */
+.menu-divider {
+    width: 1px;
+    height: 25px;
+    background-color: #ccc;
+    margin-left: 20px;
+}
+
+/* External links */
+.external-links {
+    display: flex;
+    gap: 18px;
+    list-style: none;
+    margin-left: auto; /* push to right */
+}
+.external-links li a {
+    text-decoration: none;
+    font-weight: 100;
+    color: #28a745; /* green accent for external links */
+    transition: color 0.3s;
+}
+.external-links li a:hover {
+    color: #1e7e34; /* darker green on hover */
+}
+
+/* External link icon */
+.external-links .ext {
+    font-size: 0.75rem;
+    margin-left: 4px;
+    opacity: 0.7;
+}
+.external-links a:hover .ext {
+    opacity: 1;
+}
+footer {
+    background-color: #f1f1f1;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+.footer-container {
+    max-width: 300;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+/* --- RESPONSIVE DESIGN --- */
+
+/* Small screens (phones) */
+@media (max-width: 600px) {
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        text-align:center;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    section {
+        padding: 30px 10px;
+    }
+
+    .projects .card,
+    .experience .card,
+    .testimonials .card {
+        width: 100% !important;
+        margin-bottom: 15px;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* reduce photo sizes automatically */
+    .profile-photo, .project-image, .certificate-image {
+        width: 100% !important;
+        height: auto !important;
+    }
+}
+
+/* Tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+    nav ul {
+        gap: 20px;
+    }
+
+    img {
+        max-width: 90%;
+        height: auto;
+    }
+
+    .projects .card,
+    .experience .card {
+        width: 48% !important;
+    }
+}
+
+.menu-toggle{
+    display:none;
+    font-size:28px;
+    background:none;
+    border:none;
+    cursor:pointer;
+}
+
+/* MOBILE */
+@media(max-width:600px){
+    .menu-toggle{
+        display:block;
+        position:absolute;
+        right:20px;
+        top:15px;
+    }
+    nav ul{
+        display:none;
+        flex-direction:column;
+        background:white;
+        width:100%;
+        padding:10px 0;
+        position:absolute;
+        top:50px;
+        left:0;
+        border-bottom:1px solid #ccc;
+        z-index:10;
+    }
+    nav ul.show{
+        display:flex;
+    }
+}
+

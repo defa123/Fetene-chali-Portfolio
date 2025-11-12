@@ -1,0 +1,24 @@
+<div class="gallery">
+   <img src="assets/image/1.jpg" alt="">
+   <img src="assets/image/2.jpg" alt="">
+  </div>
+.gallery img {
+   width: 280px;
+   height: 200px;
+   object-fit: cover;
+   border-radius: 12px;
+   margin: 10px;
+   border: 4px solid #0AA03E; /* green */
+   box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+}
+.gallery img:hover {
+   transform: scale(1.08);
+   transition: .4s;
+}
+.gallery {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+}
+
